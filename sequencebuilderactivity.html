@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Builder – Blue Hearts Bright Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="sequencebuilder.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">Home
+                <ul class="submenu"><li><a href="index.html">Homepage</a></li></ul>
+            </li>
+
+            <li class="menu-item">Information
+                <ul class="submenu"><li><a href="info.html">What is Autism</a></li></ul>
+            </li>
+
+            <li class="menu-item">Games
+                <ul class="submenu">
+                    <li><a href="memorygame.html">Memory Game</a></li>
+                    <li><a href="findtheobjectgame.html">Find the Object</a></li>
+                    <li><a href="emotiongame.html">Emotion Game</a></li>
+                    <li><a href="simplereactiongame.html">Simple Reaction Game</a></li>
+                    <li><a href="patterncompletionactivity.html">Pattern Completion</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">Activities
+                <ul class="submenu">
+                    <li><a href="sequencebuilderactivity.html">Sequence Builder</a></li>
+                    <li><a href="shapebuilderactivity.html">Shape Builder</a></li>
+                    <li><a href="soundpictureactivity.html">Sound–Picture Match</a></li>
+                    <li><a href="sortinggame.html">Sorting Game</a></li>
+                    <li><a href="buildsceneactivity.html">Build a Scene</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">Get Help
+                <ul class="submenu">
+                    <li><a href="https://www.werner-otto-institut.de/" target="_blank" rel="noopener noreferrer">Werner Otto Institut</a></li>
+                    <li><a href="https://autismus-institut.de/" target="_blank" rel="noopener noreferrer">Hamburger Autismus Institut</a></li>
+                    <li><a href="https://www.autismushamburg.de/" target="_blank" rel="noopener noreferrer">Autismus Hamburg e.V.</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item">Contact Us
+                <ul class="submenu"><li><a href="contactus.html">Contact Form</a></li></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="info-header">
+        <h1 class="info-title">Daily Routines – Sequence Builder</h1>
+    </section>
+
+    <section class="sequence-container">
+        <p class="sequence-intro">
+            Choose a routine, then drag the cards into the correct order from left to right. When you are ready, press “Check Order”.
+        </p>
+
+        <div class="sequence-tabs">
+            <button class="sequence-tab active" data-seq="teeth">Brush Teeth</button>
+            <button class="sequence-tab" data-seq="shower">Take a Shower</button>
+            <button class="sequence-tab" data-seq="dress">Get Dressed</button>
+            <button class="sequence-tab" data-seq="eat">Eat & Wash Hands</button>
+        </div>
+
+        <div class="sequence-panels">
+            <div class="sequence-panel active" data-seq="teeth">
+                <div class="sequence-cards"></div>
+                <button class="sequence-check-btn">Check Order</button>
+                <p class="sequence-feedback"></p>
+            </div>
+
+            <div class="sequence-panel" data-seq="shower">
+                <div class="sequence-cards"></div>
+                <button class="sequence-check-btn">Check Order</button>
+                <p class="sequence-feedback"></p>
+            </div>
+
+            <div class="sequence-panel" data-seq="dress">
+                <div class="sequence-cards"></div>
+                <button class="sequence-check-btn">Check Order</button>
+                <p class="sequence-feedback"></p>
+            </div>
+
+            <div class="sequence-panel" data-seq="eat">
+                <div class="sequence-cards"></div>
+                <button class="sequence-check-btn">Check Order</button>
+                <p class="sequence-feedback"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Blue Hearts Bright Minds. Created by Freddy Flores</p>
+    </footer>
+
+</body>
+</html>
