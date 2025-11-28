@@ -4,7 +4,7 @@ const counterText = document.querySelector(".found-counter");
 const messageText = document.querySelector(".found-message");
 const playAgainBtn = document.querySelector(".play-again-btn");
 
-const objectsToFind = ["giraffe", "basketball", "pizza", "car", "backpack"];
+const objectsToFind = ["giraffe", "basketball", "pizza", "car", "backpack", "sock", "airplane", "rabbit"];
 let foundSet = new Set();
 
 function updateCounter() {
