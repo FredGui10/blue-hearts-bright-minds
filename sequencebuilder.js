@@ -1,135 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sequences = {
-    teeth: [
-      { id: "1", icon: "🪥", text: "Put toothpaste on the brush" },
-      { id: "2", icon: "🦷", text: "Brush your teeth carefully" },
-      { id: "3", icon: "🚰", text: "Rinse your mouth with water" },
-      { id: "4", icon: "😊", text: "Smile in the mirror" }
-    ],
-    shower: [
-      { id: "1", icon: "🚿", text: "Turn on the shower" },
-      { id: "2", icon: "🧼", text: "Wash your body and hair" },
-      { id: "3", icon: "💧", text: "Rinse off the soap" },
-      { id: "4", icon: "🧴", text: "Dry off and get cozy" }
-    ],
-    dress: [
-      { id: "1", icon: "🩲", text: "Put on underwear and shirt" },
-      { id: "2", icon: "👖", text: "Put on pants or skirt" },
-      { id: "3", icon: "🧦", text: "Put on socks and shoes" },
-      { id: "4", icon: "🧥", text: "Add a coat or jacket" }
-    ],
-    eat: [
-      { id: "1", icon: "🧼", text: "Wash your hands" },
-      { id: "2", icon: "🪑", text: "Sit at the table" },
-      { id: "3", icon: "🍽️", text: "Eat your meal" },
-      { id: "4", icon: "🙏", text: "Say thank you and tidy up" }
-    ]
-  };
+const correctOrder = [
+  "images/tooth1.jpg",
+  "images/tooth2.jpg",
+  "images/tooth3.jpg",
+  "images/tooth4.jpg",
+  "images/tooth5.jpg",
+  "images/tooth6.jpg",
+  "images/tooth7.jpg",
+  "images/tooth8.jpg"
+];
 
-  function shuffle(array) {
-    return array
-      .map(item => ({ sort: Math.random(), value: item }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(a => a.value);
-  }
+let shuffled = [...correctOrder].sort(() => Math.random() - 0.5);
 
-  const panels = document.querySelectorAll(".sequence-panel");
+function loadSequence() {
+  const area = document.getElementById("sequenceArea");
+  area.innerHTML = "";
 
-  panels.forEach(panel => {
-    const key = panel.dataset.seq;
-    const data = sequences[key];
-    const container = panel.querySelector(".sequence-cards");
-    const shuffled = shuffle(data);
+  shuffled.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.classList.add("sequence-img");
+    img.draggable = true;
+    area.appendChild(img);
+  });
 
-    shuffled.forEach(step => {
-      const card = document.createElement("div");
-      card.className = "sequence-card";
-      card.draggable = true;
-      card.dataset.id = step.id;
-      card.innerHTML = `<div>${step.icon}</div><span>${step.text}</span>`;
-      container.appendChild(card);
-    });
+  enableDragging();
+}
 
-    enableDragAndDrop(container);
+function enableDragging() {
+  const items = document.querySelectorAll(".sequence-img");
+  let dragged = null;
 
-    const button = panel.querySelector(".sequence-check-btn");
-    const feedback = panel.querySelector(".sequence-feedback");
+  items.forEach(item => {
+    item.addEventListener("dragstart", () => dragged = item);
+    item.addEventListener("dragover", e => e.preventDefault());
+    item.addEventListener("drop", function() {
+      if (dragged !== this) {
+        const parent = this.parentNode;
+        const draggedNext = dragged.nextSibling;
+        const thisNext = this.nextSibling;
 
-    button.addEventListener("click", () => {
-      const cards = Array.from(container.querySelectorAll(".sequence-card"));
-      const currentOrder = cards.map(c => c.dataset.id);
-      const correctOrder = data.map(s => s.id);
-      const isCorrect = currentOrder.join(",") === correctOrder.join(",");
+        parent.insertBefore(dragged, thisNext);
+        parent.insertBefore(this, draggedNext);
 
-      if (isCorrect) {
-        feedback.textContent = "Great job! The steps are in the right order!";
-        feedback.className = "sequence-feedback success";
-      } else {
-        feedback.textContent = "Almost there! Try again.";
-        feedback.className = "sequence-feedback try-again";
+        shuffled = Array.from(document.querySelectorAll(".sequence-img")).map(i => i.src);
       }
     });
   });
+}
 
-  const tabs = document.querySelectorAll(".sequence-tab");
+document.getElementById("checkSequence").addEventListener("click", () => {
+  const result = document.getElementById("sequenceResult");
+  const current = Array.from(document.querySelectorAll(".sequence-img")).map(i => i.src);
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const seq = tab.dataset.seq;
+  const isCorrect = current.every((src, index) => src.includes(correctOrder[index]));
 
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      panels.forEach(panel => {
-        if (panel.dataset.seq === seq) {
-          panel.classList.add("active");
-        } else {
-          panel.classList.remove("active");
-        }
-      });
-    });
-  });
-
-  function enableDragAndDrop(container) {
-    container.addEventListener("dragstart", e => {
-      if (e.target.classList.contains("sequence-card")) {
-        e.target.classList.add("dragging");
-      }
-    });
-
-    container.addEventListener("dragend", e => {
-      if (e.target.classList.contains("sequence-card")) {
-        e.target.classList.remove("dragging");
-      }
-    });
-
-    container.addEventListener("dragover", e => {
-      e.preventDefault();
-      const afterElement = getDragAfterElement(container, e.clientX);
-      const dragging = container.querySelector(".sequence-card.dragging");
-      if (!dragging) return;
-      if (afterElement == null) {
-        container.appendChild(dragging);
-      } else {
-        container.insertBefore(dragging, afterElement);
-      }
-    });
-  }
-
-  function getDragAfterElement(container, x) {
-    const cards = [...container.querySelectorAll(".sequence-card:not(.dragging)")];
-
-    return cards.reduce(
-      (closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = x - box.left - box.width / 2;
-        if (offset < 0 && offset > closest.offset) {
-          return { offset: offset, element: child };
-        } else {
-          return closest;
-        }
-      },
-      { offset: Number.NEGATIVE_INFINITY, element: null }
-    ).element;
-  }
+  result.textContent = isCorrect ? "Great job! Correct order!" : "Try again!";
+  result.style.color = isCorrect ? "green" : "red";
 });
+
+document.querySelectorAll(".tab-button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+    const tabId = btn.getAttribute("data-tab");
+    document.getElementById(tabId).classList.add("active");
+
+    if (tabId === "teeth") loadSequence();
+  });
+});
+
+loadSequence();

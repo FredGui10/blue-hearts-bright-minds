@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequence Builder – Blue Hearts Bright Minds</title>
+    <title>Sequence Builder Activity</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script defer src="sequencebuilder.js"></script>
@@ -43,9 +43,9 @@
 
             <li class="menu-item">Get Help
                 <ul class="submenu">
-                    <li><a href="https://www.werner-otto-institut.de/" target="_blank" rel="noopener noreferrer">Werner Otto Institut</a></li>
-                    <li><a href="https://autismus-institut.de/" target="_blank" rel="noopener noreferrer">Hamburger Autismus Institut</a></li>
-                    <li><a href="https://www.autismushamburg.de/" target="_blank" rel="noopener noreferrer">Autismus Hamburg e.V.</a></li>
+                    <li><a href="https://www.werner-otto-institut.de/" target="_blank">Werner Otto Institut</a></li>
+                    <li><a href="https://autismus-institut.de/" target="_blank">Hamburger Autismus Institut</a></li>
+                    <li><a href="https://www.autismushamburg.de/" target="_blank">Autismus Hamburg e.V.</a></li>
                 </ul>
             </li>
 
@@ -56,47 +56,26 @@
     </nav>
 
     <section class="info-header">
-        <h1 class="info-title">Daily Routines – Sequence Builder</h1>
+        <h1 class="info-title">Sequence Builder</h1>
     </section>
 
-    <section class="sequence-container">
-        <p class="sequence-intro">
-            Choose a routine, then drag the cards into the correct order from left to right. When you are ready, press “Check Order”.
-        </p>
+    <div class="tabs-container">
+        <button class="tab-button active" data-tab="teeth">Brushing Teeth</button>
+        <button class="tab-button" data-tab="shower">Showering</button>
+        <button class="tab-button" data-tab="dress">Getting Dressed</button>
+        <button class="tab-button" data-tab="eating">Eating</button>
+    </div>
 
-        <div class="sequence-tabs">
-            <button class="sequence-tab active" data-seq="teeth">Brush Teeth</button>
-            <button class="sequence-tab" data-seq="shower">Take a Shower</button>
-            <button class="sequence-tab" data-seq="dress">Get Dressed</button>
-            <button class="sequence-tab" data-seq="eat">Eat & Wash Hands</button>
-        </div>
+    <div id="teeth" class="tab-content active">
+        <h2 class="seq-title">Put the steps in the correct order</h2>
+        <div class="sequence-area" id="sequenceArea"></div>
+        <button class="check-sequence-btn" id="checkSequence">Check Answer</button>
+        <p class="sequence-result" id="sequenceResult"></p>
+    </div>
 
-        <div class="sequence-panels">
-            <div class="sequence-panel active" data-seq="teeth">
-                <div class="sequence-cards"></div>
-                <button class="sequence-check-btn">Check Order</button>
-                <p class="sequence-feedback"></p>
-            </div>
-
-            <div class="sequence-panel" data-seq="shower">
-                <div class="sequence-cards"></div>
-                <button class="sequence-check-btn">Check Order</button>
-                <p class="sequence-feedback"></p>
-            </div>
-
-            <div class="sequence-panel" data-seq="dress">
-                <div class="sequence-cards"></div>
-                <button class="sequence-check-btn">Check Order</button>
-                <p class="sequence-feedback"></p>
-            </div>
-
-            <div class="sequence-panel" data-seq="eat">
-                <div class="sequence-cards"></div>
-                <button class="sequence-check-btn">Check Order</button>
-                <p class="sequence-feedback"></p>
-            </div>
-        </div>
-    </section>
+    <div id="shower" class="tab-content">Coming soon...</div>
+    <div id="dress" class="tab-content">Coming soon...</div>
+    <div id="eating" class="tab-content">Coming soon...</div>
 
     <footer class="footer">
         <p>© 2025 Blue Hearts Bright Minds. Created by Freddy Flores</p>
