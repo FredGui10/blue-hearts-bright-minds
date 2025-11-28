@@ -578,3 +578,127 @@ body {
     padding: 10px;
   }
 }
+
+.find-object-wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+}
+
+.find-object-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.find-object-instructions {
+  width: 30%;
+}
+
+.find-object-instructions h2 {
+  font-size: 1.6rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.object-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.object-label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.object-label.found-label {
+  color: var(--green);
+  text-decoration: line-through;
+}
+
+.found-counter {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.found-message {
+  font-size: 1rem;
+  margin-top: 8px;
+  min-height: 1.2em;
+}
+
+.play-again-btn {
+  margin-top: 15px;
+  background-color: var(--green);
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Fredoka One', Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.play-again-btn:hover {
+  background-color: var(--blue);
+}
+
+.find-object-image-area {
+  position: relative;
+  width: 65%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 4px solid var(--dark);
+}
+
+.find-object-image {
+  width: 100%;
+  display: block;
+}
+
+.object-spot {
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.object-spot:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.object-spot.found {
+  border-color: var(--yellow);
+  box-shadow: 0 0 12px rgba(248, 187, 50, 0.9);
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .find-object-layout {
+    flex-direction: column;
+  }
+  .find-object-instructions {
+    width: 100%;
+  }
+  .find-object-image-area {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .find-object-instructions h2 {
+    font-size: 1.4rem;
+  }
+  .object-label {
+    font-size: 1rem;
+  }
+  .found-counter,
+  .found-message {
+    font-size: 0.95rem;
+  }
+}
