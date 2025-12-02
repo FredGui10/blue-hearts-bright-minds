@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequence Builder Activity</title>
+    <title>Puzzle Game</title>
+
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <script defer src="sequencebuilder.js"></script>
+    <script defer src="puzzle.js"></script>
 </head>
 
 <body>
 
+    <!-- NAVIGATION BAR (Already part of your website) -->
     <nav class="navbar">
         <ul class="menu">
             <li class="menu-item">Home
-                <ul class="submenu"><li><a href="index.html">Homepage</a></li></ul>
+                <ul class="submenu">
+                    <li><a href="index.html">Homepage</a></li>
+                </ul>
             </li>
-
             <li class="menu-item">Information
-                <ul class="submenu"><li><a href="info.html">What is Autism</a></li></ul>
+                <ul class="submenu">
+                    <li><a href="info.html">What is Autism</a></li>
+                </ul>
             </li>
-
             <li class="menu-item">Games
                 <ul class="submenu">
                     <li><a href="memorygame.html">Memory Game</a></li>
@@ -39,45 +45,61 @@
                     <li><a href="buildsceneactivity.html">Build a Scene</a></li>
                 </ul>
             </li>
-
             <li class="menu-item">Get Help
                 <ul class="submenu">
                     <li><a href="https://www.werner-otto-institut.de/" target="_blank">Werner Otto Institut</a></li>
                     <li><a href="https://autismus-institut.de/" target="_blank">Hamburger Autismus Institut</a></li>
-                    <li><a href="https://www.autismushamburg.de/" target="_blank">Autismus Hamburg e.V.</a></li>
+                    <li><a href="https://www.autismushamburg.de/" target="_blank">Autismus Hamburg</a></li>
                 </ul>
             </li>
-
             <li class="menu-item">Contact Us
-                <ul class="submenu"><li><a href="contactus.html">Contact Form</a></li></ul>
+                <ul class="submenu">
+                    <li><a href="contactus.html">Contact Form</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
 
-    <section class="info-header">
-        <h1 class="info-title">Sequence Builder</h1>
+    <section class="puzzle-header">
+        <h1>Puzzle Game</h1>
+        <p>Rebuild the picture by swapping the pieces!</p>
     </section>
 
-    <div class="tabs-container">
-        <button class="tab-button active" data-tab="teeth">Brushing Teeth</button>
-        <button class="tab-button" data-tab="shower">Showering</button>
-        <button class="tab-button" data-tab="dress">Getting Dressed</button>
-        <button class="tab-button" data-tab="eating">Eating</button>
-    </div>
+    <section class="puzzle-controls">
+        <div class="control-set">
+            <label>Difficulty:</label>
+            <select id="difficulty">
+                <option value="3">Easy (3×3)</option>
+                <option value="4" selected>Normal (4×4)</option>
+                <option value="6">Hard (6×6)</option>
+                <option value="8">Extreme (8×8)</option>
+            </select>
+        </div>
 
-    <div id="teeth" class="tab-content active">
-        <h2 class="seq-title">Put the steps in the correct order</h2>
-        <div class="sequence-area" id="sequenceArea"></div>
-        <button class="check-sequence-btn" id="checkSequence">Check Answer</button>
-        <p class="sequence-result" id="sequenceResult"></p>
-    </div>
+        <div class="control-set">
+            <button id="newGameBtn" class="btn green">New Game</button>
+            <button id="shuffleBtn" class="btn red">Shuffle</button>
+        </div>
 
-    <div id="shower" class="tab-content">Coming soon...</div>
-    <div id="dress" class="tab-content">Coming soon...</div>
-    <div id="eating" class="tab-content">Coming soon...</div>
+        <div class="puzzle-stats">
+            <span>Time: <strong id="timer">00:00</strong></span>
+            <span>Moves: <strong id="moves">0</strong></span>
+        </div>
+    </section>
+
+    <main class="puzzle-main">
+        <div id="puzzleBoard" class="puzzle-board"></div>
+
+        <aside class="puzzle-preview">
+            <h2>Preview</h2>
+            <img src="images/puzzlegame.jpg" alt="Puzzle Preview" class="preview-img">
+            <p class="hint">Tap one tile and then another to swap on mobile!</p>
+        </aside>
+    </main>
 
     <footer class="footer">
-        <p>© 2025 Blue Hearts Bright Minds. Created by Freddy Flores</p>
+        <p>© 2025 Blue Hearts Bright Minds</p>
+        <div id="statusMessage"></div>
     </footer>
 
 </body>
