@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let’s Read – Blue Hearts Bright Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="reading.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                Home
+                <ul class="submenu">
+                    <li><a href="index.html">Homepage</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Information
+                <ul class="submenu">
+                    <li><a href="info.html">What is Autism</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Games
+                <ul class="submenu">
+                    <li><a href="memorygame.html">Memory Game</a></li>
+                    <li><a href="findtheobjectgame.html">Find The Object</a></li>
+                    <li><a href="puzzle.html">Puzzle Game</a></li>
+                    <li><a href="emotiongame.html">Emotion Game</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Activities
+                <ul class="submenu">
+                    <li><a href="sequencebuilderactivity.html">Sequence Builder</a></li>
+                    <li><a href="reading.html">Let's Read</a></li>
+                    <li><a href="describe.html">What do you see?</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Get Help
+                <ul class="submenu">
+                    <li><a href="https://www.werner-otto-institut.de/" target="_blank" rel="noopener noreferrer">Werner Otto Institut</a></li>
+                    <li><a href="https://autismus-institut.de/" target="_blank" rel="noopener noreferrer">Hamburger Autismus Institut</a></li>
+                    <li><a href="https://www.autismushamburg.de/" target="_blank" rel="noopener noreferrer">Autismus Hamburg e.V.</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Contact Us
+                <ul class="submenu">
+                    <li><a href="contactus.html">Contact Form</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="reading-header">
+        <img src="images/bhbmlogo.jpg" class="reading-logo" alt="Blue Hearts Bright Minds Logo">
+        <h1 class="reading-title">Let’s Read</h1>
+        <p class="reading-subtitle">Choose a story and turn the pages together.</p>
+    </section>
+
+    <section class="reading-wrapper">
+        <div class="reading-tabs">
+            <button class="story-tab active" data-story="milo">Milo the Cat</button>
+            <button class="story-tab" data-story="luna">Luna’s Colorful Day</button>
+            <button class="story-tab" data-story="ben">Ben and the Missing Star</button>
+            <button class="story-tab" data-story="ellie">Ellie’s Garden Adventure</button>
+        </div>
+
+        <div class="reading-content">
+            <div class="story-viewport">
+                <img id="storyImage" src="images/milo1.jpg" alt="Story image" class="story-image">
+            </div>
+
+            <div class="story-text-block">
+                <h2 id="storyTitle" class="story-title">Milo the Cat Finds a Friend</h2>
+                <p id="storyParagraph" class="story-paragraph">
+                    Milo the orange cat lived in a sunny garden. He loved the warm grass, the tall flowers, and watching the clouds move slowly across the sky.
+                </p>
+            </div>
+
+            <div class="story-controls">
+                <button id="prevPageBtn" class="story-btn" disabled>Previous</button>
+                <span id="pageIndicator" class="page-indicator">Page 1 of 6</span>
+                <button id="nextPageBtn" class="story-btn">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Blue Hearts Bright Minds. Created by Freddy Flores</p>
+    </footer>
+
+</body>
+</html>
