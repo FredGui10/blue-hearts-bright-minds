@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Do You See? – Blue Hearts Bright Minds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="describe.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                Home
+                <ul class="submenu">
+                    <li><a href="index.html">Homepage</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Information
+                <ul class="submenu">
+                    <li><a href="info.html">What is Autism</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Games
+                <ul class="submenu">
+                    <li><a href="memorygame.html">Memory Game</a></li>
+                    <li><a href="findtheobjectgame.html">Find The Object</a></li>
+                    <li><a href="puzzle.html">Puzzle Game</a></li>
+                    <li><a href="emotiongame.html">Emotion Game</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Activities
+                <ul class="submenu">
+                    <li><a href="sequencebuilderactivity.html">Sequence Builder</a></li>
+                    <li><a href="reading.html">Let's Read</a></li>
+                    <li><a href="describe.html">What do you see?</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Get Help
+                <ul class="submenu">
+                    <li><a href="https://www.werner-otto-institut.de/" target="_blank" rel="noopener noreferrer">Werner Otto Institut</a></li>
+                    <li><a href="https://autismus-institut.de/" target="_blank" rel="noopener noreferrer">Hamburger Autismus Institut</a></li>
+                    <li><a href="https://www.autismushamburg.de/" target="_blank" rel="noopener noreferrer">Autismus Hamburg e.V.</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                Contact Us
+                <ul class="submenu">
+                    <li><a href="contactus.html">Contact Form</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="describe-header">
+        <h1 class="describe-title">What Do You See?</h1>
+        <p class="describe-subtitle">Look carefully at the picture, then tell a grown-up what you notice. When you are ready, tap the button to see some ideas.</p>
+    </section>
+
+    <section class="describe-tabs">
+        <button class="describe-tab active" data-target="scene1">Camping Trip</button>
+        <button class="describe-tab" data-target="scene2">Busy Café</button>
+        <button class="describe-tab" data-target="scene3">Hair Salon</button>
+        <button class="describe-tab" data-target="scene4">Birthday Party</button>
+    </section>
+
+    <section class="describe-wrapper">
+        <div class="describe-scene active" id="scene1">
+            <div class="describe-image">
+                <img src="images/describe1.jpg" alt="Camping scene with family, animals and a barbecue">
+            </div>
+            <div class="describe-details">
+                <h2>Camping Trip</h2>
+                <p>What is happening in this campsite picture? Who looks calm, and who looks surprised?</p>
+                <button class="show-details-btn" data-target-list="list1">Show ideas</button>
+                <ul class="describe-list" id="list1">
+                    <li>A man is resting in a blue hammock between two trees.</li>
+                    <li>A woman in a pink dress looks worried and has her hands on her hips.</li>
+                    <li>A cook is holding a long skewer with food that is on fire.</li>
+                    <li>There is a round grill full of vegetables and meat above a campfire.</li>
+                    <li>Two children are running with food on sticks near the hot grill.</li>
+                    <li>A yellow dog is running happily beside one of the children.</li>
+                    <li>A big brown bear is peeking from behind a tree and watching the people.</li>
+                    <li>A raccoon is opening the picnic basket and taking food.</li>
+                    <li>A tent, a guitar and camping things are set up beside the family.</li>
+                    <li>Another raccoon is hiding in the bushes at the bottom of the picture.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="describe-scene" id="scene2">
+            <div class="describe-image">
+                <img src="images/describe2.jpg" alt="Two-floor café with many people">
+            </div>
+            <div class="describe-details">
+                <h2>Busy Café</h2>
+                <p>What can you see in this noisy café? Who is eating, who is working and what looks a bit silly?</p>
+                <button class="show-details-btn" data-target-list="list2">Show ideas</button>
+                <ul class="describe-list" id="list2">
+                    <li>The café has two levels with a staircase in the middle.</li>
+                    <li>A waiter on the stairs is slipping and almost dropping a big pizza.</li>
+                    <li>A man upstairs is pointing while his slice of pizza falls off his plate.</li>
+                    <li>A woman in black is carrying drinks on a tray near the bar.</li>
+                    <li>A chef behind the counter is serving cake and drinks.</li>
+                    <li>A couple is sitting on a blue sofa and talking together.</li>
+                    <li>A woman is sitting at the bar enjoying a drink and looking relaxed.</li>
+                    <li>Green curtains hang around the windows, and there is a chandelier on the ceiling.</li>
+                    <li>A cat is sitting on a chair at one of the tables near the bottom.</li>
+                    <li>Potted plants and a big flower painting decorate the café walls.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="describe-scene" id="scene3">
+            <div class="describe-image">
+                <img src="images/describe3.jpg" alt="Hair salon with many customers">
+            </div>
+            <div class="describe-details">
+                <h2>Hair Salon</h2>
+                <p>Look at this busy salon. What are the people doing to change how they look?</p>
+                <button class="show-details-btn" data-target-list="list3">Show ideas</button>
+                <ul class="describe-list" id="list3">
+                    <li>A woman is getting her hair washed in a sink and looks very relaxed.</li>
+                    <li>Another woman is having a face mask and makeup put on.</li>
+                    <li>A hairdresser is trimming a man’s beard while he lies back in a chair.</li>
+                    <li>A person with red hair is drying an older woman’s hair with a hairdryer.</li>
+                    <li>A customer in a green dress is sitting in a salon chair with rollers in her hair.</li>
+                    <li>A woman is running with a coat and hat, and some hair is falling on the floor.</li>
+                    <li>Shelves are filled with bottles, brushes and hair products.</li>
+                    <li>There is a fish tank with colorful fish on one side of the room.</li>
+                    <li>Combs, scissors and other tools are spread out on the front counter.</li>
+                    <li>The floor has hair clippings and a long lock of hair near the plant in the center.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="describe-scene" id="scene4">
+            <div class="describe-image">
+                <img src="images/describe4.jpg" alt="Birthday party with many children">
+            </div>
+            <div class="describe-details">
+                <h2>Birthday Party</h2>
+                <p>What is happening at this party? How do you think the children are feeling?</p>
+                <button class="show-details-btn" data-target-list="list4">Show ideas</button>
+                <ul class="describe-list" id="list4">
+                    <li>A big chocolate cake with one candle is on the table in the middle.</li>
+                    <li>Children are dancing to music, and musical notes float around the room.</li>
+                    <li>Colorful flags and speakers hang above the party area.</li>
+                    <li>A group of kids is talking and laughing at the front of the picture.</li>
+                    <li>One child is drinking from a cup while another eats a burger.</li>
+                    <li>There are bottles of juice and soft drinks on the table.</li>
+                    <li>Plates with rolls, snacks and napkins are spread out around the cake.</li>
+                    <li>Some children are wearing bright jackets, hats and patterned shirts.</li>
+                    <li>A girl with long blond hair looks a little shy while others talk to her.</li>
+                    <li>Everyone seems busy doing something different: dancing, eating, talking or listening to music.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Blue Hearts Bright Minds. Created by Freddy Flores</p>
+    </footer>
+</body>
+</html>
