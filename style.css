@@ -705,10 +705,6 @@ body {
   }
 }
 
-/* =============================
-   PUZZLE GAME PAGE
-   ============================= */
-
 .puzzle-header {
   text-align: center;
   margin-top: 30px;
@@ -809,7 +805,6 @@ body {
   color: #555;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 900px) {
   .puzzle-main {
     grid-template-columns: 1fr;
@@ -957,8 +952,6 @@ body {
   font-size: 0.95rem;
   color: #333;
 }
-
-/* Mobile responsive for reading page */
 
 @media (max-width: 800px) {
   .reading-content {
@@ -1132,8 +1125,6 @@ body {
   display: block;
 }
 
-/* mobile layout for describe page */
-
 @media (max-width: 900px) {
   .describe-wrapper {
     padding: 18px 16px;
@@ -1287,8 +1278,6 @@ body {
   background-color: var(--light-bg);
 }
 
-/* Responsive */
-
 @media (max-width: 800px) {
   .emotion-card {
     flex-direction: column;
@@ -1332,10 +1321,6 @@ body {
   }
 }
 
-/* =============================
-   AUDIO TEA PAGE
-============================= */
-
 .audiotea-container {
     width: 100%;
     max-width: 900px;
@@ -1357,7 +1342,7 @@ body {
     margin-top: 10px;
 }
 
-/* WAVES BACKGROUND */
+
 .wave-animation {
     position: relative;
     width: 100%;
@@ -1393,5 +1378,57 @@ body {
 @keyframes waveMotion {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+}
+
+@media (max-width: 900px) {
+    .audiotea-container {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .wave-animation {
+        height: 200px;
+    }
+
+    .audiotea-instructions {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    #teaAudio {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .wave-animation {
+        height: 160px;
+        border-width: 3px;
+    }
+
+    .audiotea-instructions {
+        font-size: 1.1rem;
+        margin-top: 12px;
+        padding: 0 10px;
+    }
+
+    #teaAudio {
+        width: 95%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .wave-animation {
+        height: 130px;
+    }
+
+    .audiotea-instructions {
+        font-size: 1rem;
+    }
+
+    #teaAudio {
+        width: 100%;
+    }
 }
 
