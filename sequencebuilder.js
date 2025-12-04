@@ -73,16 +73,17 @@ function loadSequence(activity) {
 }
 
 function enableDragging(area, activity) {
-    const items = area.querySelectorAll(".sequence-img");
+    const items = Array.from(area.querySelectorAll(".sequence-img"));
     let dragged = null;
+    let touchDragging = false;
 
     items.forEach(item => {
         item.addEventListener("dragstart", () => dragged = item);
         item.addEventListener("dragover", e => e.preventDefault());
 
         item.addEventListener("drop", function () {
-            if (dragged !== this) {
-                const parent = this.parentNode;
+            if (dragged && dragged !== this) {
+                const parent = area;
                 const draggedNext = dragged.nextSibling;
                 const thisNext = this.nextSibling;
 
@@ -91,6 +92,38 @@ function enableDragging(area, activity) {
 
                 shuffledSequences[activity] =
                     Array.from(parent.querySelectorAll(".sequence-img")).map(i => i.src);
+            }
+        });
+    });
+
+    items.forEach(item => {
+        item.addEventListener("touchstart", (e) => {
+            dragged = item;
+            touchDragging = true;
+            item.classList.add("touch-dragging");
+        });
+
+        item.addEventListener("touchmove", (e) => {
+            if (!touchDragging) return;
+
+            const touch = e.touches[0];
+            const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+            if (element && element.classList.contains("sequence-img") && element !== dragged) {
+                const parent = area;
+                parent.insertBefore(dragged, element);
+            }
+
+            e.preventDefault();
+        });
+
+        item.addEventListener("touchend", () => {
+            if (touchDragging) {
+                touchDragging = false;
+                dragged.classList.remove("touch-dragging");
+
+                shuffledSequences[activity] =
+                    Array.from(area.querySelectorAll(".sequence-img")).map(i => i.src);
             }
         });
     });
