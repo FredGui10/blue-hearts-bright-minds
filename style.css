@@ -507,6 +507,10 @@ body {
   margin-top: 15px;
 }
 
+.seq-title {
+    color: var(--blue);
+}
+
 @media (max-width: 900px) {
   .sequence-tabs {
     flex-direction: column;
