@@ -1432,3 +1432,18 @@ body {
     }
 }
 
+.memory-controls {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.memory-controls select {
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--dark);
+  background-color: white;
+  cursor: pointer;
+}
+
