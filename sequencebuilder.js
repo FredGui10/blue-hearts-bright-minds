@@ -1,7 +1,3 @@
-// ============================
-//   IMAGE SEQUENCES FOR ALL TABS
-// ============================
-
 const sequences = {
     teeth: [
         "images/tooth1.jpg",
@@ -47,13 +43,7 @@ const sequences = {
     ]
 };
 
-// To store shuffled images per activity
 let shuffledSequences = {};
-
-
-// ============================
-//   LOAD A SEQUENCE INTO A TAB
-// ============================
 
 function loadSequence(activity) {
     const correctOrder = sequences[activity];
@@ -67,7 +57,6 @@ function loadSequence(activity) {
     const area = document.getElementById(areaId);
     area.innerHTML = "";
 
-    // Shuffle only ONCE per visit
     if (!shuffledSequences[activity]) {
         shuffledSequences[activity] = [...correctOrder].sort(() => Math.random() - 0.5);
     }
@@ -82,11 +71,6 @@ function loadSequence(activity) {
 
     enableDragging(area, activity);
 }
-
-
-// ============================
-//   DRAG AND DROP ENGINE
-// ============================
 
 function enableDragging(area, activity) {
     const items = area.querySelectorAll(".sequence-img");
@@ -111,11 +95,6 @@ function enableDragging(area, activity) {
         });
     });
 }
-
-
-// ============================
-//   CHECK ANSWER BUTTONS
-// ============================
 
 document.querySelectorAll(".check-sequence-btn").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -148,11 +127,6 @@ document.querySelectorAll(".check-sequence-btn").forEach(btn => {
     });
 });
 
-
-// ============================
-//   TAB SWITCHING
-// ============================
-
 document.querySelectorAll(".tab-button").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
@@ -166,6 +140,4 @@ document.querySelectorAll(".tab-button").forEach(btn => {
     });
 });
 
-
-// Load default (teeth)
 loadSequence("teeth");

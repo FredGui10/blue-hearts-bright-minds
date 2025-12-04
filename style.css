@@ -1331,3 +1331,67 @@ body {
     text-align: center;
   }
 }
+
+/* =============================
+   AUDIO TEA PAGE
+============================= */
+
+.audiotea-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 60px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.audiotea-instructions {
+    font-size: 1.3rem;
+    color: var(--blue);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#teaAudio {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+/* WAVES BACKGROUND */
+.wave-animation {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #a8e6ff, #d8f6ff);
+    border: 4px solid var(--blue);
+}
+
+.wave {
+    position: absolute;
+    top: 70%;
+    width: 200%;
+    height: 200px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 43%;
+    animation: waveMotion 8s infinite linear;
+}
+
+.wave2 {
+    top: 75%;
+    background: rgba(255,255,255,0.6);
+    animation-duration: 10s;
+}
+
+.wave3 {
+    top: 80%;
+    background: rgba(255,255,255,0.4);
+    animation-duration: 12s;
+}
+
+@keyframes waveMotion {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
