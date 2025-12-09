@@ -6,7 +6,6 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
-// Base set of items
 const baseItems = [
   "🐶","🐱","🐰","🦊","🐻","🐼",
   "🐸","🐵","🦁","🐯","🐮","🐨",
@@ -14,16 +13,12 @@ const baseItems = [
   "1","2","3","4","5","6"
 ];
 
-// Difficulty settings
 const difficultyMap = {
-  easy: 6,     // 3x4 grid = 6 pairs (12 cards)
-  normal: 12,  // 4x6 grid = 12 pairs (24 cards)
-  hard: 18     // 6x6 grid = 18 pairs (36 cards)
+  easy: 6,
+  normal: 12,
+  hard: 18
 };
 
-// -------------------------------
-// BUILD GAME
-// -------------------------------
 function buildGame() {
   grid.innerHTML = "";
   firstCard = null;
@@ -53,9 +48,6 @@ function buildGame() {
   addCardListeners();
 }
 
-// -------------------------------
-// CARD LOGIC
-// -------------------------------
 function addCardListeners() {
   document.querySelectorAll(".memory-card").forEach(card => {
     card.addEventListener("click", () => {
@@ -89,11 +81,7 @@ function addCardListeners() {
   });
 }
 
-// -------------------------------
-// EVENT LISTENERS
-// -------------------------------
 difficultySelect.addEventListener("change", buildGame);
 restartBtn.addEventListener("click", buildGame);
 
-// Start first game
 buildGame();
