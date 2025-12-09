@@ -1469,10 +1469,6 @@ body {
   transform: scale(0.95);
 }
 
-/* ==========================
-   HOMEPAGE VIDEO SECTION
-========================== */
-
 .video-section {
     width: 90%;
     max-width: 900px;
@@ -1489,7 +1485,7 @@ body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 90.25%; /* 16:9 ratio */
+    padding-bottom: 90.25%;
     height: 0;
     overflow: hidden;
     border-radius: 20px;
